@@ -1,0 +1,19 @@
+schema_version = "1.0.0"
+id = "suketto"
+version = "0.1.1"
+name = "助人"
+tagline = "Blender の中で Codex と相談し、制作する日本語アシスタント"
+maintainer = "塚本吉彦"
+type = "add-on"
+blender_version_min = "5.2.0"
+platforms = ["windows-x64"]
+license = ["SPDX:LicenseRef-All-Rights-Reserved"]
+copyright = ["2026 塚本吉彦"]
+tags = ["3D View", "Modeling"]
+
+[permissions]
+files = "Codex の起動、作業ファイルの操作、会話履歴の保存"
+network = "Codex による ChatGPT ログインと会話"
+
+[build]
+paths_exclude_pattern = [".git/", "__pycache__/", "tests/", "dist/", "tools/", "*.pyc"]
