@@ -22,7 +22,7 @@ r.status, r.account = '接続済み', 'ChatGPT · ログイン済み'
 r.models = [
     {'model': model, 'displayName': label, 'defaultReasoningEffort': 'medium',
      'supportedReasoningEfforts': [{'reasoningEffort': e} for e in ['low', 'medium', 'high', 'xhigh', 'max', 'ultra']]}
-    for model,label in [('gpt-5.6-terra', 'GPT-5.6 Terra'), ('gpt-6-astra', 'GPT-6 Astra')]]
+    for model,label in [('gpt-6-luna', 'GPT-6 Luna'), ('gpt-6-sol', 'GPT-6 Sol'), ('gpt-6-astra', 'GPT-6 Astra')]]
 # この表示用サンプルをユーザーの履歴へ保存しない。
 r.storage = None
 r.add('user', 'この立方体を幅1、高さ3、奥行き2にしてください。')

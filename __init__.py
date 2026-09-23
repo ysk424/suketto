@@ -21,8 +21,8 @@ EFFORT_LABELS = {"none": "なし", "minimal": "最小", "low": "低", "medium": 
                  "high": "高", "xhigh": "非常に高い", "max": "最大", "ultra": "最高"}
 ROLES = {"user": "あなた", "assistant": "助人", "tool": "作業", "system": "お知らせ"}
 PRESETS = {
-    "question": ("gpt-5.6-terra", "medium", "問い合わせ · Terra / 中"),
-    "normal": ("gpt-6-astra", "medium", "通常操作 · Astra / 中"),
+    "question": ("gpt-6-luna", "medium", "問い合わせ · Luna / 中"),
+    "normal": ("gpt-6-sol", "medium", "通常操作 · Sol / 中"),
     "difficult": ("gpt-6-astra", "xhigh", "難しい仕事 · Astra / 非常に高い"),
 }
 
@@ -401,7 +401,7 @@ def sync_ui():
             _model_items = items
             if items:
                 available = [m[0] for m in items]
-                state.model = previous_model if previous_model in available else ("gpt-5.6-terra" if "gpt-5.6-terra" in available else available[0])
+                state.model = previous_model if previous_model in available else ("gpt-6-luna" if "gpt-6-luna" in available else available[0])
                 choices = [x[0] for x in effort_items(state, bpy.context)]
                 if previous_effort in choices:
                     state.effort = previous_effort

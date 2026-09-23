@@ -35,9 +35,10 @@ class SmokeTests(unittest.TestCase):
         addon.runtime.models = [
             {'model': m, 'displayName': m, 'defaultReasoningEffort': 'low',
              'supportedReasoningEfforts': [{'reasoningEffort': e} for e in ['low', 'medium', 'high', 'xhigh']]}
-            for m in ['gpt-5.6-terra', 'gpt-6-astra']]
+            for m in ['gpt-6-astra', 'gpt-6-sol', 'gpt-6-luna']]
         addon.sync_ui()
         state = bpy.context.window_manager.suketto
+        self.assertEqual((state.model, state.effort), ("gpt-6-luna", "medium"))
         for action, (model, effort, label) in addon.PRESETS.items():
             self.assertEqual(bpy.ops.suketto.action(action=action), {'FINISHED'})
             self.assertEqual((state.model, state.effort), (model, effort))
